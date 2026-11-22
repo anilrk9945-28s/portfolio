@@ -1,0 +1,323 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Anil Kumar R K Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one fixed WebGL neural-network field behind a single column of glass panels; hero left-weighted, skills and about on an offset two-column grid. */
+:root {
+  --bg: #05060c;
+  --fg: #e9ecf6;
+  --muted: #9097b0;
+  --accent: #ffb26b;
+  --signal: #7b93ff;
+  --panel: rgba(9, 11, 22, 0.66);
+  --line: rgba(160, 175, 255, 0.18);
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 17px/1.65 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+  overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+#bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; pointer-events: none; }
+.vignette {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 30% 40%, transparent 0%, rgba(5,6,12,.55) 100%);
+}
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+header.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 11;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 14px 0; background: linear-gradient(var(--bg), rgba(5,6,12,0));
+}
+.logo { font: 700 18px var(--display); letter-spacing: .02em; text-decoration: none; }
+.logo span { color: var(--accent); }
+nav { display: flex; gap: 22px; font: 500 13px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+nav a { color: var(--muted); text-decoration: none; padding: 4px 0; }
+nav a:hover { color: var(--fg); }
+
+.hero { padding: 72px 0 56px; display: grid; gap: 28px; max-width: 820px; }
+.tag { font: 500 13px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 var(--accent); animation: ping 2.4s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(255,178,107,0); } 100% { box-shadow: 0 0 0 0 rgba(255,178,107,0); } }
+h1 { font: 700 clamp(44px, 9vw, 104px)/.98 var(--display); letter-spacing: -.03em; margin: 0; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: clamp(18px, 2.2vw, 22px); color: #c9cee2; max-width: 40ch; margin: 0; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn {
+  font: 500 14px var(--mono); letter-spacing: .04em; text-decoration: none; cursor: pointer;
+  padding: 13px 20px; border: 1px solid var(--line); background: var(--panel); color: var(--fg);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 4px;
+  transition: border-color .2s, transform .2s;
+}
+.btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+.btn.primary { background: var(--accent); color: #1a1006; border-color: var(--accent); }
+.meta { font: 400 13px var(--mono); color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; }
+
+section { padding: 56px 0; }
+.label { font: 500 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--signal); margin: 0 0 20px; }
+h2 { font: 700 clamp(28px, 4.4vw, 46px)/1.08 var(--display); letter-spacing: -.02em; margin: 0 0 24px; text-wrap: balance; max-width: 18ch; }
+.glass {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
+.about .glass { padding: 28px; }
+.about p { margin: 0 0 16px; color: #cfd3e6; }
+.about p:last-child { margin: 0; }
+
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.skill { padding: 24px; display: grid; gap: 10px; align-content: start; transition: border-color .25s, transform .25s; }
+.skill:hover { border-color: var(--accent); transform: translateY(-4px); }
+.skill small { font: 500 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.skill h3 { font: 700 22px var(--display); margin: 0; }
+.skill p { margin: 0; font-size: 15px; color: var(--muted); }
+.skill.wide { grid-column: span 1; }
+
+.focus { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.focus .glass { padding: 22px 24px; }
+.focus b { display: block; font: 700 19px var(--display); margin-bottom: 6px; }
+.focus span { color: var(--muted); font-size: 15px; }
+
+.edu { padding: 28px; display: grid; gap: 6px; max-width: 640px; }
+.edu b { font: 700 24px var(--display); }
+.edu span { color: var(--muted); }
+
+.contact { text-align: left; }
+.contact .big { font: 700 clamp(26px, 5vw, 56px)/1.1 var(--display); letter-spacing: -.02em; margin: 0 0 28px; max-width: 18ch; text-wrap: balance; }
+.mail { font: 500 clamp(16px, 2.6vw, 22px) var(--mono); word-break: break-all; margin: 0 0 20px; }
+footer { padding: 32px 0 0; font: 400 12px var(--mono); color: var(--muted); border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 820px) {
+  .about { grid-template-columns: 1fr; gap: 24px; }
+  .skills { grid-template-columns: 1fr; }
+  nav { gap: 14px; }
+  .hero { padding-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tag i { animation: none; }
+  .btn, .skill { transition: none; }
+}
+</style>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="#top">anil<span>.</span>rk</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#focus">Focus</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="tag"><i></i> Open to connect · Bengaluru, India</div>
+      <h1>Anil Kumar <em>R K</em></h1>
+      <p class="lede">B.Tech AIML student at REVA University and aspiring AI engineer, turning ideas into useful technology.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/anil-kumar-rk-b27b69384" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="meta"><span>Python</span><span>C Programming</span><span>Web Development</span><span>AI &amp; ML</span></div>
+    </div>
+
+    <section id="about">
+      <p class="label">About</p>
+      <div class="about">
+        <h2>Solving real problems with code and curiosity.</h2>
+        <div class="glass">
+          <p>I'm a B.Tech student specializing in Artificial Intelligence and Machine Learning at REVA University. I'm passionate about technology, innovation and solving real-world problems through programming and creative thinking.</p>
+          <p>I enjoy exploring new technologies and working out how they become practical solutions. Right now I'm strengthening my programming fundamentals, sharpening my problem-solving and gaining hands-on experience through technical projects.</p>
+          <p>My goal is to transform ideas into useful technology while I keep learning and growing as a developer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="label">Skills</p>
+      <h2>What I work with.</h2>
+      <div class="skills">
+        <article class="glass skill"><small>Language</small><h3>Python</h3><p>My main language for programming practice and AI work.</p></article>
+        <article class="glass skill"><small>Language</small><h3>C Programming</h3><p>Fundamentals: pointers, memory and how programs really run.</p></article>
+        <article class="glass skill"><small>Build</small><h3>Web Development</h3><p>Turning ideas into pages and interfaces people can use.</p></article>
+        <article class="glass skill"><small>Field</small><h3>Artificial Intelligence</h3><p>Intelligent systems and AI-driven applications.</p></article>
+        <article class="glass skill"><small>Field</small><h3>Machine Learning</h3><p>Learning how models are trained and put to use.</p></article>
+        <article class="glass skill"><small>Practice</small><h3>Problem Solving</h3><p>Building the habit through steady, hands-on projects.</p></article>
+      </div>
+    </section>
+
+    <section id="focus">
+      <p class="label">Focus &amp; education</p>
+      <h2>Where I'm headed.</h2>
+      <div class="focus">
+        <div class="glass"><b>AI-driven applications</b><span>Exploring how AI can power practical products.</span></div>
+        <div class="glass"><b>Intelligent systems</b><span>Understanding how they are designed and built.</span></div>
+        <div class="glass"><b>Software development</b><span>Writing solid code and shipping useful things.</span></div>
+      </div>
+      <div class="glass edu" style="margin-top:16px">
+        <small class="label" style="margin:0">Education</small>
+        <b>B.Tech, Artificial Intelligence &amp; Machine Learning</b>
+        <span>REVA University · Bengaluru, Karnataka</span>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="label">Contact</p>
+      <p class="big">Let's connect and build something meaningful.</p>
+      <p class="mail" id="email">anilrk9945@gmail.com</p>
+      <div class="actions">
+        <button class="btn primary" id="copy" type="button">Copy email</button>
+        <a class="btn" href="https://www.linkedin.com/in/anil-kumar-rk-b27b69384" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+      </div>
+      <p class="meta" style="margin-top:20px">Open to developers, mentors, technology enthusiasts and industry professionals.</p>
+    </section>
+  </main>
+
+  <footer><span>Anil Kumar R K · Bengaluru</span><span>Move your cursor. Scroll to travel through the network.</span></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  btn.addEventListener('click', function () {
+    var t = document.getElementById('email').textContent;
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected, press copy';
+    };
+    try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  if (!window.THREE) return;
+  var canvas = document.getElementById('bg'), renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); }
+  catch (e) { canvas.style.display = 'none'; return; }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var small = window.innerWidth < 700;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(60, 1, 0.1, 200);
+  camera.position.set(0, 0, 20);
+  var world = new THREE.Group(); scene.add(world);
+
+  // soft round sprite
+  var c = document.createElement('canvas'); c.width = c.height = 64;
+  var g = c.getContext('2d'), grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  grad.addColorStop(0, 'rgba(255,255,255,1)'); grad.addColorStop(.35, 'rgba(255,255,255,.55)'); grad.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = grad; g.fillRect(0, 0, 64, 64);
+  var sprite = new THREE.CanvasTexture(c);
+
+  // nodes
+  var N = small ? 120 : 230, pos = new Float32Array(N * 3), col = new Float32Array(N * 3);
+  var cBlue = new THREE.Color(0x7b93ff), cAmber = new THREE.Color(0xffb26b), cWhite = new THREE.Color(0xdfe6ff), p = [];
+  for (var i = 0; i < N; i++) {
+    var x = (Math.random() - .5) * 40, y = (Math.random() - .5) * 26, z = (Math.random() - .5) * 60 - 8;
+    p.push(new THREE.Vector3(x, y, z));
+    pos.set([x, y, z], i * 3);
+    var r = Math.random(), cc = r < .12 ? cAmber : (r < .6 ? cBlue : cWhite);
+    col.set([cc.r, cc.g, cc.b], i * 3);
+  }
+  var pg = new THREE.BufferGeometry();
+  pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  pg.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  world.add(new THREE.Points(pg, new THREE.PointsMaterial({
+    size: 0.7, map: sprite, vertexColors: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+  })));
+
+  // edges
+  var edges = [], lp = [];
+  for (var a = 0; a < N; a++) {
+    var near = [];
+    for (var b = a + 1; b < N; b++) { var d = p[a].distanceTo(p[b]); if (d < 7.5) near.push([d, b]); }
+    near.sort(function (u, v) { return u[0] - v[0]; });
+    near.slice(0, 3).forEach(function (n) { edges.push([a, n[1]]); lp.push(p[a].x, p[a].y, p[a].z, p[n[1]].x, p[n[1]].y, p[n[1]].z); });
+  }
+  var lg = new THREE.BufferGeometry();
+  lg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(lp), 3));
+  world.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x6f86ff, transparent: true, opacity: .22, depthWrite: false })));
+
+  // pulses travelling along edges
+  var M = small ? 40 : 90, pulses = [], pp = new Float32Array(M * 3);
+  for (var k = 0; k < M; k++) pulses.push({ e: Math.floor(Math.random() * edges.length), t: Math.random(), s: .15 + Math.random() * .35 });
+  var pug = new THREE.BufferGeometry();
+  pug.setAttribute('position', new THREE.BufferAttribute(pp, 3));
+  world.add(new THREE.Points(pug, new THREE.PointsMaterial({
+    size: 1.1, map: sprite, color: 0xffb26b, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+  })));
+
+  // wireframe solids as landmarks
+  var ico = new THREE.Mesh(new THREE.IcosahedronGeometry(5, 1),
+    new THREE.MeshBasicMaterial({ color: 0x7b93ff, wireframe: true, transparent: true, opacity: .28 }));
+  ico.position.set(small ? 4 : 11, 1, -6); world.add(ico);
+  var knot = new THREE.Mesh(new THREE.TorusKnotGeometry(3, .7, 120, 12),
+    new THREE.MeshBasicMaterial({ color: 0xffb26b, wireframe: true, transparent: true, opacity: .16 }));
+  knot.position.set(small ? -4 : -12, -4, -22); world.add(knot);
+  var ring = new THREE.Mesh(new THREE.TorusGeometry(8, .04, 8, 120),
+    new THREE.MeshBasicMaterial({ color: 0xffb26b, transparent: true, opacity: .35 }));
+  ring.position.set(11, 1, -6); ring.rotation.x = 1.2; world.add(ring);
+
+  var mx = 0, my = 0, tx = 0, ty = 0, scroll = 0, scrollT = 0;
+  window.addEventListener('pointermove', function (e) { tx = e.clientX / window.innerWidth - .5; ty = e.clientY / window.innerHeight - .5; }, { passive: true });
+  function readScroll() { var h = document.documentElement.scrollHeight - window.innerHeight; scrollT = h > 0 ? window.scrollY / h : 0; }
+  window.addEventListener('scroll', readScroll, { passive: true });
+  function resize() {
+    var w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize); resize(); readScroll(); scroll = scrollT;
+
+  var clock = new THREE.Clock(), tmp = new THREE.Vector3();
+  function frame() {
+    var dt = Math.min(clock.getDelta(), .05), time = clock.elapsedTime;
+    mx += (tx - mx) * .04; my += (ty - my) * .04; scroll += (scrollT - scroll) * .05;
+    camera.position.x = mx * 5; camera.position.y = -my * 3 - scroll * 4;
+    camera.position.z = 20 - scroll * 42;
+    camera.lookAt(mx * 2, -scroll * 3, camera.position.z - 20);
+    world.rotation.y = Math.sin(time * .1) * .12 + scroll * .5;
+    ico.rotation.x += dt * .12; ico.rotation.y += dt * .18;
+    knot.rotation.x -= dt * .1; knot.rotation.y += dt * .14;
+    ring.rotation.z += dt * .1;
+    for (var k = 0; k < M; k++) {
+      var o = pulses[k]; o.t += o.s * dt;
+      if (o.t >= 1) { o.t = 0; o.e = Math.floor(Math.random() * edges.length); }
+      var ed = edges[o.e]; tmp.copy(p[ed[0]]).lerp(p[ed[1]], o.t);
+      pp[k * 3] = tmp.x; pp[k * 3 + 1] = tmp.y; pp[k * 3 + 2] = tmp.z;
+    }
+    pug.attributes.position.needsUpdate = true;
+    renderer.render(scene, camera);
+  }
+  if (reduce) { frame(); window.addEventListener('resize', frame); }
+  else (function loop() { frame(); requestAnimationFrame(loop); })();
+})();
+</script>
+
+</body></html>
